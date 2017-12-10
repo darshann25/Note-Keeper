@@ -16,11 +16,9 @@ switch (command) {
         var note = notes.addNote(argv.title, argv.body)
         if(note) {
             console.log('Note created')
-            console.log('--')
-            console.log(`Title : ${note.title}`)
-            console.log(`Body : ${note.body}`)
+            notes.logNote(note)
         } else {
-            console.log(`Note ${argv.title} already exists. Please use a unqiue name for the note.`)
+            console.log(`Note ${argv.title} is taken.`)
         }
         break
 
@@ -29,7 +27,15 @@ switch (command) {
         break
 
     case 'read':
-        notes.getNote(argv.title)
+        var note = notes.getNote(argv.title)
+        if(note) {
+            console.log('Note read')
+            notes.logNote(note)
+        } else {
+            console.log(`Note ${argv.title} not found.`)
+        }
+        
+        
         break
 
     case 'remove':
