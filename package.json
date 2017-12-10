@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/darshann25/Note-Keeper#readme",
   "dependencies": {
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "yargs": "^4.7.1"
   }
 }
