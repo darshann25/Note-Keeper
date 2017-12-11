@@ -23,7 +23,9 @@ switch (command) {
         break
 
     case 'list':
-        notes.getAll()
+        var allNotes = notes.getAll()
+        console.log(`Printing ${allNotes.length} note(s).`)
+        allNotes.forEach(note => notes.logNote(note))
         break
 
     case 'read':
@@ -34,8 +36,6 @@ switch (command) {
         } else {
             console.log(`Note ${argv.title} not found.`)
         }
-        
-        
         break
 
     case 'remove':
